@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bloomcoding", "Bloomcoding\Bloomcoding.csproj", "{FBABB179-BB19-4803-B210-99F0B7F00A4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{BA4FA408-93F7-4E92-9AF9-DA9B4202672A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{EFEA700C-9C6C-4D1F-97D7-F2EDB5763C23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBABB179-BB19-4803-B210-99F0B7F00A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBABB179-BB19-4803-B210-99F0B7F00A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBABB179-BB19-4803-B210-99F0B7F00A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBABB179-BB19-4803-B210-99F0B7F00A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4FA408-93F7-4E92-9AF9-DA9B4202672A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4FA408-93F7-4E92-9AF9-DA9B4202672A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4FA408-93F7-4E92-9AF9-DA9B4202672A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4FA408-93F7-4E92-9AF9-DA9B4202672A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFEA700C-9C6C-4D1F-97D7-F2EDB5763C23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFEA700C-9C6C-4D1F-97D7-F2EDB5763C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFEA700C-9C6C-4D1F-97D7-F2EDB5763C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFEA700C-9C6C-4D1F-97D7-F2EDB5763C23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {838A8065-479B-4629-AED7-D2D18858A725}
+	EndGlobalSection
+EndGlobal
