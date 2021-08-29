@@ -1,4 +1,5 @@
 using Domain;
+using Features.AuthFeatures.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,7 +40,8 @@ namespace Bloomcoding
                 opt.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
 
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            //services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(typeof(RegisterUserCommand).Assembly);
 
             services.AddControllers();
 
