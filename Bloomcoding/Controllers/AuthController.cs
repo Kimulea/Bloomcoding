@@ -1,6 +1,6 @@
-﻿using Bloomcoding.Features.AuthFeatures.Commands;
-using Bloomcoding.Features.AuthFeatures.Queries;
-using Domain;
+﻿using Domain;
+using Features.AuthFeatures.Commands;
+using Features.AuthFeatures.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,8 +35,6 @@ namespace Bloomcoding.Controllers
         public async Task<IActionResult> LoginUser(GetUserByEmailQuery query)
         {
             var user = _mediator.Send(query).Result;
-
-            
 
             if (user == null)
             {

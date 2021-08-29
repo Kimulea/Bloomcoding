@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using BCrypt.Net;
+using Domain;
 using MediatR;
 using Persistence.Interfaces;
 using System;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Bloomcoding.Features.AuthFeatures.Commands
+namespace Features.AuthFeatures.Commands
 {
     public class RegisterUserCommand : IRequest<User>
     {

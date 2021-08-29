@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Bloomcoding.Features.AuthFeatures.Queries
+namespace Features.AuthFeatures.Queries
 {
     public class GetUserByEmailQuery : IRequest<User>
     {
