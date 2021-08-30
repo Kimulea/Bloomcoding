@@ -64,7 +64,7 @@ namespace Bloomcoding.Controllers
 
                 int userId = int.Parse(token.Issuer);
 
-                var user = _mediator.Send(new GetUserByIdQuery { Id = userId}).Result;
+                var user =  _mediator.Send(new GetUserByIdQuery { Id = userId}).Result;
 
                 return Ok(user);
             }

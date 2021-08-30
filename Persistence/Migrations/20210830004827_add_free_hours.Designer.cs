@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
 
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BloomcodingContext))]
-    partial class BloomcodingContextModelSnapshot : ModelSnapshot
+    [Migration("20210830004827_add_free_hours")]
+    partial class add_free_hours
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,35 +74,6 @@ namespace Persistence.Migrations
                     b.ToTable("Groups");
                 });
 
-            modelBuilder.Entity("Domain.GroupStart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DayOfWeek")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Groupid")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("HourMinute")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Groupid");
-
-                    b.ToTable("GroupStarts");
-                });
-
             modelBuilder.Entity("Domain.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -129,7 +102,7 @@ namespace Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime?>("BirthDate")
+                    b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedDate")
@@ -200,17 +173,6 @@ namespace Persistence.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Domain.GroupStart", b =>
-                {
-                    b.HasOne("Domain.Group", "Group")
-                        .WithMany("GroupStarts")
-                        .HasForeignKey("Groupid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Group");
-                });
-
             modelBuilder.Entity("GroupUser", b =>
                 {
                     b.HasOne("Domain.Group", null)
@@ -239,11 +201,6 @@ namespace Persistence.Migrations
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Group", b =>
-                {
-                    b.Navigation("GroupStarts");
                 });
 
             modelBuilder.Entity("Domain.User", b =>

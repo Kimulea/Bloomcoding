@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class UserRole : BaseEntity
+    public class FreeHour : BaseEntity
     {
+        public DateTime HourMinute { get; set; }
+        public DateTime DayOfWeek { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public int RoleId { get; set; }
-        public Role Role { get; set; }
     }
 }

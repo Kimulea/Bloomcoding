@@ -12,6 +12,9 @@ namespace Domain
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
+        public ICollection<Role> Roles { get; set; }
+        public ICollection<Group> Groups { get; set; }
+        public ICollection<FreeHour> FreeHours { get; set; }
     }
 }

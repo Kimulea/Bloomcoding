@@ -22,10 +22,32 @@ namespace Persistence
             builder.Entity<User>()
                 .HasIndex(p => p.Email)
                 .IsUnique();
+
+            builder.Entity<User>()
+                .HasMany(x => x.Roles)
+                .WithMany(x => x.Users)
+                .UsingEntity(x => x.ToTable("UsersRoles"));
+
+            builder.Entity<User>()
+                .HasMany(x => x.Groups)
+                .WithMany(x => x.Users)
+                .UsingEntity(x => x.ToTable("UsersGroups"));
+
+            builder.Entity<User>()
+                .HasMany(x => x.FreeHours)
+                .WithOne(x => x.User)
+                .HasForeignKey(x => x.UserId);
+
+            builder.Entity<Group>()
+                .HasMany(x => x.GroupStarts)
+                .WithOne(x => x.Group)
+                .HasForeignKey(x => x.Groupid);
         }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<UserRole> UsersRoles { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<FreeHour> FreeHours { get; set; }
+        public DbSet<GroupStart> GroupStarts { get; set; }
     }
 }

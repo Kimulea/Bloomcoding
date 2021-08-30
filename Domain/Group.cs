@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Role : BaseEntity
+    public class Group : BaseEntity
     {
         public string Name { get; set; }
+        public int Level { get; set; }
         public ICollection<User> Users { get; set; }
+        public ICollection<GroupStart> GroupStarts { get; set; }
     }
 }
